@@ -18,17 +18,7 @@ export class DivMakerComponent implements OnInit {
     this.circle2 = !this.circle2;
   }
 
-  styleDiv1(event) {
-    this.el1 = event.target.el1.value;
-  }
-
-  getEl1Size() {
-    let el1Style = {
-      'height': this.el1 + 'px',
-      'width': this.el1 + 'px'
-    };
-    return el1Style;
-  }
+  
   styleDiv2(event) {
     this.el2 = event.target.el2.value;
   }
