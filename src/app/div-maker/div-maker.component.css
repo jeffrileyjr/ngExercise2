@@ -1,6 +1,18 @@
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
 .element1 {
     margin-top: 15px;
+    transition: 0.2s;
     background-color: blue;
+}
+
+.element2 {
+    margin-top: 15px;
+    transition: 0.9s;
+    background-color: red;
 }
 
 .circle {
