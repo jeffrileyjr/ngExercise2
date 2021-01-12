@@ -1,5 +1,6 @@
 <div class="wrapper">
   <div class="top-element">
+      <h3>Element will appear as you type a value</h3>
       <!-- did the top with no form, div will dynamically size as you enter numbers-->
     <input [(ngModel)]="el1" type="text" placeholder="diameter" />
     <label for="diameter1">Diameter</label>
@@ -14,6 +15,7 @@
     ></div>
   </div>
   <div class="bottom-element">
+      <h3>Element will appear when you hit enter</h3>
       <!-- this element appears when form is submitted -->
     <form (ngSubmit)="styleDiv2($event)">
       <input type="text" placeholder="diameter" name="el2" />
