@@ -1,29 +1,36 @@
 <div class="wrapper">
-    <div class="top-element">
-        <form (ngSubmit)='styleDiv1($event)'>
-            <input type="text" placeholder="diameter" name='el1' >
-            <label for="diameter1">Diameter</label>
-            <input type="checkbox" name="circle" id="top-circle" (input)='isCircle()'>
-            <label for="top-circle">Is Circle?</label>
-        </form>
-        
-        
-        <div class="element1" [ngStyle]='getEl1Size()' [ngClass]= "{'circle': circle1}">
-        
-        </div>
-        </div>
-        <div class="bottom-element">
-            <form (ngSubmit)='styleDiv2($event)'>
-                <input type="text" placeholder="diameter" name='el2' >
-                <label for="diameter1">Diameter</label>
-                <input type="checkbox" name="circle" id="top-circle" (input)='isCircle2()'>
-                <label for="top-circle">Is Circle?</label>
-            </form>
-            
-            
-            <div class="element2" [ngStyle]='getEl2Size()' [ngClass]= "{'circle': circle2}">
-            
-            </div>
-        
-        </div>
+  <div class="top-element">
+      <!-- did the top with no form, div will dynamically size as you enter numbers-->
+    <input [(ngModel)]="el1" type="text" placeholder="diameter" />
+    <label for="diameter1">Diameter</label>
+    <input type="checkbox" name="circle" id="top-circle" (input)="isCircle()" />
+    <label for="top-circle">Is Circle?</label>
+
+    <div
+      class="element1"
+      [style.width]="el1 + 'px'"
+      [style.height]="el1 + 'px'"
+      [ngClass]="{ circle: circle1 }"
+    ></div>
+  </div>
+  <div class="bottom-element">
+      <!-- this element appears when form is submitted -->
+    <form (ngSubmit)="styleDiv2($event)">
+      <input type="text" placeholder="diameter" name="el2" />
+      <label for="diameter1">Diameter</label>
+      <input
+        type="checkbox"
+        name="circle"
+        id="top-circle"
+        (input)="isCircle2()"
+      />
+      <label for="top-circle">Is Circle?</label>
+    </form>
+
+    <div
+      class="element2"
+      [ngStyle]="getEl2Size()"
+      [ngClass]="{ circle: circle2 }"
+    ></div>
+  </div>
 </div>
